@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 23 10:02:30 2020
-
-@author: jraidal
-"""
-
-
 
 
 #!/usr/bin/env python3
@@ -54,7 +45,7 @@ def functions(x, y, function):
     Returns
     -------
     TYPE float
-        Returns function value based on input x and y \.
+        Returns function value based on input x and y.
 
     '''
     if function == 'Beale':

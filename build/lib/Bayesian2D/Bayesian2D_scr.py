@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 23 10:02:30 2020
-
-@author: jraidal
-"""
-
-
 
 
 #!/usr/bin/env python3
@@ -34,7 +25,7 @@ import matplotlib.pyplot as plt
 from sklearn import preprocessing
 from sklearn.gaussian_process.kernels import Matern, RationalQuadratic
 import sys
-
+from mpl_toolkits.mplot3d import Axes3D
 
 # Define objective function
 
@@ -54,7 +45,7 @@ def functions(x, y, function):
     Returns
     -------
     TYPE float
-        Returns function value based on input x and y \.
+        Returns function value based on input x and y.
 
     '''
     if function == 'Beale':
@@ -65,7 +56,7 @@ def functions(x, y, function):
         return (1+(x+y+1)**2 * (19-14*x+3*x**2-14*y+6*x*y+3*y**2))*(30+(2*x-3*y)**2 * (18-32*x+12*x**2+48*y-36*x*y+27*y**2))
     if function == 'Rosenbrock':
       #Rosenbrock
-        return ((8 - x)**2 + 100*(y - x**2)**2)
+        return ((1 - x)**2 + 100*(y - x**2)**2)
     if function == 'Ackley':
       #Ackley
         return -20*numpy.exp(-0.2*numpy.sqrt(0.5*(x**2 + y**2)))-numpy.exp(0.5*(numpy.cos(2*numpy.pi*x) + numpy.cos(2*numpy.pi*y)))+numpy.exp(1)+20

@@ -2,8 +2,6 @@ README.txt
 setup.py
 Bayesian2D/Bayesian2D_scr.py
 Bayesian2D/__init__.py
-Bayesian2D/untitled0.py
-Bayesian2D/untitled1.py
 Bayesian2D.egg-info/PKG-INFO
 Bayesian2D.egg-info/SOURCES.txt
 Bayesian2D.egg-info/dependency_links.txt
