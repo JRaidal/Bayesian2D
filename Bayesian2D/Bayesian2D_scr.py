@@ -100,6 +100,7 @@ def create_random(x_bounds, y_bounds, n_random):
         Two element list of y-axis boundaries for the function.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
 
     Returns
     -------
@@ -134,12 +135,14 @@ def acquisition(XY, x_bounds, y_bounds, e, model, max_min, n_random):
         Two element list of y-axis boundaries for the function.
     e : float
         Exploration parameter.
+        The default is 0.2.
     model : sklearn.gaussian_process
         Some Gaussian process model.
     max_min : str
         Specifies whether the algorithm is searching for maxima or minima.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
     
     Returns
     -------
@@ -229,6 +232,7 @@ def initial_points(starting_n, opt_func, x_bounds, y_bounds):
     ----------
     starting_n : int
         Number of initial points picked.
+        The default is 100.
     opt_func : function
         The function from which the points are picked.
     x_bounds : list
@@ -298,8 +302,10 @@ def optimize(opt_func, aquisition_func, starting_n, n_random, x_bounds, y_bounds
         Function used to pick points to evaluate.
     starting_n : int
         Initial number of random points evaluated.
+        The default is 100.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
     x_bounds : list
         Two element list of x-axis boundaries for the function.
     y_bounds : list
@@ -308,6 +314,7 @@ def optimize(opt_func, aquisition_func, starting_n, n_random, x_bounds, y_bounds
         Number of times optimization is run.
     e : float
         Exploration parameter.
+        The default is 0.2.
     model : sklearn.gaussian_process
         Some Gaussian process model.
     max_min : str
@@ -369,8 +376,10 @@ def results(opt_function, acquisition, starting_n, n_random, x_bounds, y_bounds,
         Function used to pick points to evaluate.
     starting_n : int
         Initial number of random points evaluated.
+        The default is 100.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
     x_bounds : list
         Two element list of x-axis boundaries for the function.
     y_bounds : list
@@ -379,6 +388,7 @@ def results(opt_function, acquisition, starting_n, n_random, x_bounds, y_bounds,
         Number of times optimization is run.
     e : float
         Exploration parameter.
+        The default is 0.2.
     model : sklearn.gaussian_process
         Some Gaussian process model.
     max_min : str
@@ -430,7 +440,7 @@ def results(opt_function, acquisition, starting_n, n_random, x_bounds, y_bounds,
     print('Time per iteration', (datetime.now() - startTime)/iterations)
     return x_best, y_best, z_best
 
-def Bayesian2D(x_bounds, y_bounds, starting_n, n_random, iterations, max_min, exploration, function = 'Rosenbrock' ):
+def Bayesian2D(x_bounds, y_bounds, starting_n = 100, n_random = 50000, iterations, max_min, exploration = 0.2, function = 'Rosenbrock' ):
     '''
     Combines all the functions in the package to find the maximum/minimum of any 2D
     function specified.
@@ -443,14 +453,17 @@ def Bayesian2D(x_bounds, y_bounds, starting_n, n_random, iterations, max_min, ex
         Two element list of y-axis boundaries for the function.
     starting_n : int
         Initial number of random points evaluated.
+        The default is 100.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
     iterations : int
         Number of times optimization is run.
     max_min : str
         Specifies whether the algorithm is searching for maxima or minima.
     exploration : float
         Exploration parameter.
+        The default is 0.2.
     function : str, optional
         Either the name of one of the built in functions or a custom 2D function. 
         The default is 'Rosenbrock'.
@@ -500,4 +513,5 @@ def Bayesian2D(x_bounds, y_bounds, starting_n, n_random, iterations, max_min, ex
     x, y, z_best = results(objective, acquisition, starting_n, n_random, x_bounds, y_bounds, iterations, e, model, max_min)
     
     return x, y, z_best
+
 
