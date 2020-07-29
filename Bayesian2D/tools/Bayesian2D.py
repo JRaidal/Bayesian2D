@@ -1,4 +1,4 @@
-def Bayesian2D(x_bounds, y_bounds, starting_n, n_random, iterations, max_min, exploration, function = 'Rosenbrock' ):
+def Bayesian2D(x_bounds, y_bounds, starting_n = 100, n_random = 50000, iterations, max_min, exploration = 0.2, function = 'Rosenbrock' ):
     '''
     Combines all the functions in the package to find the maximum/minimum of any 2D
     function specified.
@@ -11,14 +11,17 @@ def Bayesian2D(x_bounds, y_bounds, starting_n, n_random, iterations, max_min, ex
         Two element list of y-axis boundaries for the function.
     starting_n : int
         Initial number of random points evaluated.
+        The default is 100.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
     iterations : int
         Number of times optimization is run.
     max_min : str
         Specifies whether the algorithm is searching for maxima or minima.
     exploration : float
         Exploration parameter.
+        The default is 0.2.
     function : str, optional
         Either the name of one of the built in functions or a custom 2D function. 
         The default is 'Rosenbrock'.
@@ -68,3 +71,4 @@ def Bayesian2D(x_bounds, y_bounds, starting_n, n_random, iterations, max_min, ex
     x, y, z_best = results(objective, acquisition, starting_n, n_random, x_bounds, y_bounds, iterations, e, model, max_min)
     
     return x, y, z_best
+

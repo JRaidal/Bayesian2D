@@ -6,6 +6,7 @@ def initial_points(starting_n, opt_func, x_bounds, y_bounds):
     ----------
     starting_n : int
         Number of initial points picked.
+        The default is 100.
     opt_func : function
         The function from which the points are picked.
     x_bounds : list

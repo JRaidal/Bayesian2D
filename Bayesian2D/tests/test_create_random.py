@@ -17,7 +17,7 @@ class TestCreateRandom(unittest.TestCase):
 		
 	def test_output_type(self):
 		Ysamples = create_random(self.x_bounds, self.y_bounds, self.n_random)
-		self.assertEquals(type(XYsamples), numpy.ndarray)
+		self.assertEquals(type(Ysamples), numpy.ndarray)
 
 	def test_output_length(self):
 		XYsamples = create_random(self.x_bounds, self.y_bounds, self.n_random)

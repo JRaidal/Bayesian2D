@@ -10,8 +10,10 @@ def results(opt_function, acquisition, starting_n, n_random, x_bounds, y_bounds,
         Function used to pick points to evaluate.
     starting_n : int
         Initial number of random points evaluated.
+        The default is 100.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
     x_bounds : list
         Two element list of x-axis boundaries for the function.
     y_bounds : list
@@ -20,6 +22,7 @@ def results(opt_function, acquisition, starting_n, n_random, x_bounds, y_bounds,
         Number of times optimization is run.
     e : float
         Exploration parameter.
+        The default is 0.2.
     model : sklearn.gaussian_process
         Some Gaussian process model.
     max_min : str

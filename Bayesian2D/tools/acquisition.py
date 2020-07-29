@@ -13,12 +13,14 @@ def acquisition(XY, x_bounds, y_bounds, e, model, max_min, n_random):
         Two element list of y-axis boundaries for the function.
     e : float
         Exploration parameter.
+        The default is 0.2.
     model : sklearn.gaussian_process
         Some Gaussian process model.
     max_min : str
         Specifies whether the algorithm is searching for maxima or minima.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
     
     Returns
     -------

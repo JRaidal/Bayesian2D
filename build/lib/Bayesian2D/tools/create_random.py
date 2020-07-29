@@ -1,3 +1,5 @@
+from numpy.random import uniform
+import numpy
 def create_random(x_bounds, y_bounds, n_random):
     '''
     Uniformly creates the specified number of random points within specified bounds.
@@ -10,6 +12,7 @@ def create_random(x_bounds, y_bounds, n_random):
         Two element list of y-axis boundaries for the function.
     n_random : int
         Number of random points to be created.
+        The default is 50000.
 
     Returns
     -------

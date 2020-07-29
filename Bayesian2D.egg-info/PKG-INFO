@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: Bayesian2D
-Version: 0.2.6
+Version: 0.2.9
 Summary: Package used to find the maximum or minimum of any 2D function using Bayesian optimization
 Home-page: https://github.com/JRaidal/Bayesian2D
 Author: Juhan Raidal
